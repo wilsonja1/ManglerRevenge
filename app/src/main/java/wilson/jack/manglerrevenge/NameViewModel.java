@@ -12,7 +12,6 @@ public class NameViewModel {
         mName = new Name();
     }
 
-
     public String getNiceName(){
         List<String> mNameList = mName.getNiceNameList();
         String random = mNameList.get(mRandomizer.nextInt(mNameList.size()));
