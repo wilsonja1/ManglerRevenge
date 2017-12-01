@@ -15,16 +15,12 @@ public class NameViewModel {
     public String getNiceName(){
         List<String> mNameList = mName.getNiceNameList();
         String random = mNameList.get(mRandomizer.nextInt(mNameList.size()));
-        return random;
+        return mName.getFirstName() + " " + random;
     }
 
     public String getRudeName(){
         List<String> mNameList = mName.getRudeNameList();
         String random = mNameList.get(mRandomizer.nextInt(mNameList.size()));
-        return random;
-    }
-
-    public String getFirstName(){
-        return mName.getFirstName();
+        return mName.getFirstName() + " " + random;
     }
 }

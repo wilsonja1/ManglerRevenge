@@ -43,13 +43,15 @@ public class MangleActivity extends AppCompatActivity {
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+                finish();
             }
         });
 
         remangleButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
+//                Intent intent  = new Intent (MangleActivity.this, MangleActivity.class);
+//                startActivity(intent);
+                recreate();
             }
         });
 
