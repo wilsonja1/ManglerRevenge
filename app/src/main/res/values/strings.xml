@@ -3,4 +3,5 @@
     <string name="first_name">First Name:</string>
     <string name="mangle_nicely">Mangle Nicely</string>
     <string name="mange_rudely">Mangle Rudely</string>
+    <string name="name_error">First name must be filled in</string>
 </resources>
