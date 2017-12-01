@@ -7,9 +7,9 @@ public class NameViewModel {
     private Random mRandomizer;
     private Name mName;
 
-    public NameViewModel() {
+    public NameViewModel(String name) {
         mRandomizer = new Random();
-        mName = new Name();
+        mName = new Name(name);
     }
 
     public String getNiceName(){
@@ -22,5 +22,9 @@ public class NameViewModel {
         List<String> mNameList = mName.getRudeNameList();
         String random = mNameList.get(mRandomizer.nextInt(mNameList.size()));
         return random;
+    }
+
+    public String getFirstName(){
+        return mName.getFirstName();
     }
 }

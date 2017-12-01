@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 
 public class MangleActivity extends AppCompatActivity {
@@ -21,19 +22,36 @@ public class MangleActivity extends AppCompatActivity {
         String isNice = myIntent.getStringExtra("isNice");
 
 
+        Bundle bundle = new Bundle();
+        bundle.putString("firstName", pass);
+
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
+
         if (fragment == null) {
             if("yes".equals(isNice)) {
                 fragment = new MangleNiceFragment();
             } else {
                 fragment = new MangleRudeFragment();
             }
+            fragment.setArguments(bundle);
             fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
         }
 
-        resetButton = (Button) findViewById
+        resetButton = (Button) findViewById(R.id.reset);
+        remangleButton = (Button) findViewById(R.id.remangle);
 
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
+
+        remangleButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+            }
+        });
 
 
         //FragmentManager fm = getSupportFragmentManager();

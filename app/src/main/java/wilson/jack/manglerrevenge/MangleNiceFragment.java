@@ -19,8 +19,10 @@ public class MangleNiceFragment extends Fragment {
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             //View v = inflater.inflate(R.layout.nice_fragment, container, false);
             //return v;
+            String pass = getArguments().getString("firstName");
+
             NiceFragmentBinding binding = DataBindingUtil.inflate(inflater, R.layout.nice_fragment, container, false);
-            binding.setViewModel(new NameViewModel());
+            binding.setViewModel(new NameViewModel(pass));
             return binding.getRoot();
         }
 }
