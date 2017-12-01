@@ -7,10 +7,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MangleActivity extends AppCompatActivity {
     private Button resetButton;
     private Button remangleButton;
+    private ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,13 @@ public class MangleActivity extends AppCompatActivity {
                 recreate();
             }
         });
+
+        mImageView = (ImageView) findViewById(R.id.imageView1);
+        if("yes".equals(isNice)) {
+            mImageView.setImageResource(R.drawable.good);
+        } else {
+            mImageView.setImageResource(R.drawable.bad);
+        }
 
 
         //FragmentManager fm = getSupportFragmentManager();
