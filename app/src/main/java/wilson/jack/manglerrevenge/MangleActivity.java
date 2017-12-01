@@ -19,15 +19,17 @@ public class MangleActivity extends AppCompatActivity {
 
 
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
-        if (fragment == null) {
-            if ("yes".equals(isNice)) {
-                fragment = new MangleNiceFragment();
-            }
-            else {
-                fragment = new MangleRudeFragment();
-            }
-            fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
+
+        Fragment fragmentNice = fm.findFragmentById(R.id.fragment_container_nice);
+        if (fragmentNice == null) {
+            fragmentNice = new MangleNiceFragment();
+            fm.beginTransaction().add(R.id.fragment_container_nice, fragmentNice).commit();
+        }
+
+        Fragment fragmentRude = fm.findFragmentById(R.id.fragment_container_rude);
+        if (fragmentRude == null) {
+            fragmentRude = new MangleRudeFragment();
+            fm.beginTransaction().add(R.id.fragment_container_rude, fragmentRude).commit();
         }
     }
 }
