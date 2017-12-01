@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 
 public class MangleActivity extends AppCompatActivity {
+    private Button resetButton;
+    private Button remangleButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class MangleActivity extends AppCompatActivity {
             }
             fm.beginTransaction().add(R.id.fragment_container, fragment).commit();
         }
+
+        resetButton = (Button) findViewById
+
+
 
         //FragmentManager fm = getSupportFragmentManager();
         //Fragment fragmentNice = fm.findFragmentById(R.id.fragment_container_nice);
