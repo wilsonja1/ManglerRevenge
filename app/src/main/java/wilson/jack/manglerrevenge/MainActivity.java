@@ -1,5 +1,6 @@
 package wilson.jack.manglerrevenge;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, getString(R.string.name_error), Toast.LENGTH_SHORT).show();
                 } else {
                     String pass = mEditText.getText().toString();
+                    Intent intent = new Intent (MainActivity.this, MangleActivity.class);
+                    intent.putExtra("firstName", pass);
+                    intent.putExtra("isNice", "yes");
+                    startActivity(intent);
                 }
             }
         });
@@ -39,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, getString(R.string.name_error), Toast.LENGTH_SHORT).show();
                 } else {
                     String pass = mEditText.getText().toString();
+                    Intent intent = new Intent (MainActivity.this, MangleActivity.class);
+                    intent.putExtra("firstName", pass);
+                    intent.putExtra("isNice", "no");
+                    startActivity(intent);
                 }
             }
         });
