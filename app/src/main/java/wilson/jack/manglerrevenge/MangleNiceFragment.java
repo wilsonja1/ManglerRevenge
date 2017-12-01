@@ -15,7 +15,8 @@ public class MangleNiceFragment extends Fragment {
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            View v = inflater.inflate(R.layout.nice_fragment, container, false);
+            //View v = inflater.inflate(R.layout.nice_fragment, container, false);
+            FragmentBeatBoxBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_beat_box, container, false);
             return v;
         }
 }
